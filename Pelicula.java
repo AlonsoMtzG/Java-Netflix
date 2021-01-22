@@ -1,3 +1,3 @@
-public class Serie{
-  
+public class Pelicula{
+
 }

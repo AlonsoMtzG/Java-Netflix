@@ -1,3 +1,5 @@
-public class Serie{
+public class Serie extends Video{
+  
+  private int noTemporadas;
   
 }

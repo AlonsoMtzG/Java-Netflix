@@ -1,6 +1,6 @@
 class Main {
   public static void main(String[] args) {
-    System.out.println("Hello world!");
-    Video miVideo = new Video();
+    Video miVideo = new Video("Batman", "Accion", "C. Nolan", "2008", "2 hrs");
+    miVideo.mostrarDatos();
   }
 }

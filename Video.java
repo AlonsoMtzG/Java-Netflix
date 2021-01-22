@@ -6,6 +6,9 @@ public class Video{
   private String duracion;
   private boolean visto;
 
+  public Video(){
+  }
+
   public Video(String titulo, String creador){
     this.titulo = titulo;
     this.creador = creador;
@@ -59,24 +62,19 @@ public class Video{
     this.duracion = duracion;
   }
 
+  public String toString(){
+    return super.toString().concat(" con duracion de: ").concat ( getDuracion() );
+  }
+
+  public void mostrarDatos(){
+    System.out.println(this.toString());
+    System.out.println("D A T O S");
+    System.out.println("Nombre: " + titulo);
+    System.out.println("Genero: " + genero);
+    System.out.println("Creador: " + creador);
+    System.out.println("Año: " + año);
+    System.out.println("Duracion: " + duracion);
+  }
+
 }
-
-/* Crea una clase llamada Pelicula con las siguientes características:
-     • Atributos: titulo, genero, creador, año, duracion y visto.
-
-    • Constructores:
-
-         • Un constructor default.
-
-         • Un constructor con el titulo y creador. Los demás campos tendrán su valor                        default por tipo de dato. Visto tendrá false por defecto.
-
-         •	Un constructor con todos los atributos, excepto visto.
-
-    • Métodos:
-
-         • Métodos get de todos los atributos, excepto visto.
-
-         • Métodos set de todos los atributos, excepto visto.
-
-         • Sobreescribe el método toString.*/
 
