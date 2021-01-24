@@ -4,14 +4,21 @@ public class Video{
   private String creador;
   private String año;
   private String duracion;
-  private boolean visto;
+  protected boolean visto;
 
   public Video(){
+    this.titulo = "titulo";
+    this.genero = "genero";
+    this.creador = "creador";
+    this.año = "año";
+    this.duracion = "duracion";
+    this.visto = false;
   }
 
   public Video(String titulo, String creador){
     this.titulo = titulo;
     this.creador = creador;
+    this.visto = false;
   }
 
   public Video(String titulo, String genero, String creador, String año, String duracion){
@@ -20,6 +27,7 @@ public class Video{
     this.creador = creador;
     this.año = año;
     this.duracion = duracion;
+    this.visto = false;
   }
 
   public String getTitulo(){
@@ -63,17 +71,7 @@ public class Video{
   }
 
   public String toString(){
-    return super.toString().concat(" con duracion de: ").concat ( getDuracion() );
-  }
-
-  public void mostrarDatos(){
-    System.out.println(this.toString());
-    System.out.println("D A T O S");
-    System.out.println("Nombre: " + titulo);
-    System.out.println("Genero: " + genero);
-    System.out.println("Creador: " + creador);
-    System.out.println("Año: " + año);
-    System.out.println("Duracion: " + duracion);
+    return super.toString().concat(" \nTitulo: ").concat(titulo).concat(" Genero: ").concat(genero).concat(" Creador: ").concat(creador).concat("\nAño: ").concat(año).concat(" Duracion: ").concat(duracion);
   }
 
 }
