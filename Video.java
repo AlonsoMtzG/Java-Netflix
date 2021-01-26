@@ -2,26 +2,29 @@ public class Video{
   private String titulo;
   private String genero;
   private String creador;
-  private String año;
-  private String duracion;
+  private int año;
+  private int duracion;
   protected boolean visto;
 
   public Video(){
-    this.titulo = "titulo";
-    this.genero = "genero";
-    this.creador = "creador";
-    this.año = "año";
-    this.duracion = "duracion";
+    this.titulo = "Sin titulo";
+    this.genero = "Sin genero";
+    this.creador = "Sin creador";
+    this.año = 0;
+    this.duracion = 0;
     this.visto = false;
   }
 
   public Video(String titulo, String creador){
     this.titulo = titulo;
+    this.genero = "Sin genero";
     this.creador = creador;
+    this.año = 0;
+    this.duracion = 0;
     this.visto = false;
   }
 
-  public Video(String titulo, String genero, String creador, String año, String duracion){
+  public Video(String titulo, String genero, String creador, int año, int duracion){
     this.titulo = titulo;
     this.genero = genero;
     this.creador = creador;
@@ -54,24 +57,24 @@ public class Video{
     this.creador = creador;
   }
 
-  public String getAño(){
+  public int getAño(){
     return año;
   }
 
-  public void setAño(String año){
+  public void setAño(int año){
     this.año = año;
   }
 
-  public String getDuracion(){
+  public int getDuracion(){
     return duracion;
   }
 
-  public void setDuracion(String duracion){
+  public void setDuracion(int duracion){
     this.duracion = duracion;
   }
 
   public String toString(){
-    return super.toString().concat(" \nTitulo: ").concat(titulo).concat(" Genero: ").concat(genero).concat(" Creador: ").concat(creador).concat("\nAño: ").concat(año).concat(" Duracion: ").concat(duracion);
+    return super.toString().concat(" \nTitulo: ").concat(getTitulo()).concat(" / Genero: ").concat(getGenero()).concat(" / Creador: ").concat(getCreador()).concat("\nAño: ").concat(String.valueOf(getAño())).concat(" / Duracion: ").concat(String.valueOf(getDuracion()));
   }
 
 }

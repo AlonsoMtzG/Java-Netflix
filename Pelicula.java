@@ -7,14 +7,18 @@ public class Pelicula extends Video implements IVisualizable{
     super(titulo, creador);
   }
 
-  public Pelicula(String titulo, String genero, String creador, String año, String duracion){
+  public Pelicula(String titulo, String genero, String creador, int año, int duracion){
     super(titulo, genero, creador, año, duracion);
+  }
+
+  @Override
+  public String toString(){
+    return super.toString().concat(" mins.");
   }
 
   @Override
   public void marcarVisto(){
     this.visto = true;
-    System.out.println("Pelicula Vista.");
   }
 
   @Override
@@ -24,7 +28,13 @@ public class Pelicula extends Video implements IVisualizable{
 
   @Override
   public void tiempoVisto(){
-    System.out.println("3 hrs visto de esta Pelicula.");
+    if(esVisto() == true){
+      int mins = (int) ((Math.random() * getDuracion())+1);
+      System.out.println(" - - " + mins +  " mins vistos." + " - - ");
+    }
+    else{
+      System.out.println("Sin reproducir.");
+    }
   }
 
 }

@@ -8,10 +8,12 @@ public class Serie extends Video implements IVisualizable{
 
   public Serie(String titulo, String creador){
     super(titulo, creador);
+    this.noTemporadas = 1;
   }
 
-  public Serie(String titulo, String genero, String creador, String año, String duracion){
+  public Serie(String titulo, int noTemporadas, String genero, String creador, int año, int duracion){
     super(titulo, genero, creador, año, duracion);
+    this.noTemporadas = noTemporadas;
   }
 
   public int getTemporadas(){
@@ -24,13 +26,12 @@ public class Serie extends Video implements IVisualizable{
 
   @Override
   public String toString(){
-    return super.toString().concat(" No. Temporadas: ").concat(String.valueOf(noTemporadas));
+    return super.toString().concat(" episodios / No. Temporadas: ").concat(String.valueOf(noTemporadas));
   }
 
   @Override
   public void marcarVisto(){
     this.visto = true;
-    System.out.println("Serie Vista.");
   }
 
   @Override
@@ -40,7 +41,13 @@ public class Serie extends Video implements IVisualizable{
 
   @Override
   public void tiempoVisto(){
-    System.out.println("3 hrs visto de esta Serie.");
+    if(esVisto() == true){
+      int mins = (int) ((Math.random() * getDuracion())+1);
+      System.out.println(" - - " + mins +  " episodios vistos." + " - - ");
+    }
+    else{
+      System.out.println("Sin reproducir.");
+    }
   }
   
 }
